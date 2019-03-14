@@ -1,24 +1,26 @@
 // Set up MySQL connection.
-var mysql = require("mysql");
-var connection;
+var Sequelize = require("sequelize");
 
 //Require dotenv for db control
 require("dotenv").config();
 
 if (process.env.JAWSDB_URL) {
-  var connection = mysql.createConnection(process.env.JAWSDB_URL);
+  var connection = Sequelize.createConnection(process.env.JAWSDB_URL);
 } else {
-  connection = mysql.createConnection({
+  var sequelize = new Sequelize("berm_db", "MYSQL_USERNAME", "MYSQL_PASSWORD", {
     host: "localhost",
     port: 3306,
-    user: "MYSQL_USERNAME",
-    password: "MYSQL_PASSWORD",
-    database: "berm_db"
+    dialect: "mysql",
+    pool: {
+      max: 5,
+      min: 0,
+      idle: 1000
+    }
   });
 }
 
 // Make connection.
-connection.connect(function(err) {
+sequelize.connect(function(err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
@@ -27,4 +29,4 @@ connection.connect(function(err) {
 });
 
 // Export connection for our ORM to use.
-module.exports = connection;
+module.exports = sequelize;
