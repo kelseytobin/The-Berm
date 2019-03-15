@@ -49,7 +49,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     createdAt: {
-      type: DataTypes.TIMESTAMP,
+      type: DataTypes.STRING,
       allowNull: false
     },
     sold: {
