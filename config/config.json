@@ -2,8 +2,8 @@
   "development": {
     "username": "MYSQL_USERNAME",
     "password": "MYSQL_PASSWORD",
-    "database": "exampledb",
-    "host": "localhost",
+    "database": "MYSQL_DBNAME",
+    "host": "MYSQL_HOST",
     "dialect": "mysql"
   },
   "test": {

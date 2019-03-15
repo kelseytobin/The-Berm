@@ -49,18 +49,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     createdAt: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      type: DataTypes.TIMESTAMP,
+      allowNull: false
     },
     sold: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      allowNull: false
     }
   });
   return Listings;
