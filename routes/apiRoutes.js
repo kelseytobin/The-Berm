@@ -8,6 +8,7 @@ module.exports = function(app) {
   // Get all listings
   app.get("/api/listings", function(req, res) {
     db.Listings.findAll({}).then(function(dbListings) {
+      res.render(dbListings);
       res.json(dbListings);
     });
   });
