@@ -1,48 +1,115 @@
-<div id="home">
-  {{!-- Navigation Bar --}}
+{{!-- Navigation Bar --}}
 
-  <div class="uk-navbar-container" berm>
-    <div class="uk-navbar-center">
-      {{!-- <div class="uk-navbar-center-left"><div>About</div></div> --}}
-      <a href="./images/berm_logo.png" class="uk-navbar-item berm-logo"></a>
-      {{!-- <div class="uk-navbar-center-right"><div>...</div></div> --}}
-    </div>
+<nav class="uk-navbar-container uk-navbar">
+  <div class="uk-navbar-right">
 
+    <ul class="uk-navbar-nav">
+      <li class="uk-active"><a href="#">Home</a></li>
 
-    {{!-- Page content --}}
-    <div class="container">
+      <li class="uk-active"><a href="#">Events</a></li>
 
-      <div class="row">
-        <div class="col-8 offset-2">
-          {{!-- <h1>{{msg}}</h1> --}}
-          <h1>An Online Mountain Biking Market Place Just For Women!</h1>
-          <form class="clearfix mb-4" action="POST">
-            <div class="form-group">
-              <label for="example-text">Example Text</label>
-              <input type="text" id="example-text" class="form-control" aria-describedby="example-text"
-                placeholder="Enter Example Text">
-            </div>
-            <div class="form-group">
-              <label for="example-description">Example Description</label>
-              <textarea class="form-control" id="example-description" aria-describedby="example-description"
-                placeholder="Enter Example Description"></textarea>
-            </div>
-            <button id="submit" class="btn btn-primary float-right">Submit</button>
-          </form>
-          <h3>Examples:</h3>
-          <ul id="example-list" class="list-group">
-            {{#each examples}}
-            <li data-id="{{this.id}}" class="list-group-item">
-              <a href="example/{{this.id}}">{{this.text}}</a>
-              <button class="btn btn-danger float-right delete">ｘ</button>
-            </li>
-            {{/each}}
-          </ul>
-        </div>
-      </div>
-    </div>
+      <li class="uk-active"><a href="#">Get Educated</a></li>
+
+      <li><a href="#">See The Gear</a></li>
+    </ul>
+
   </div>
+</nav>
+
+
+{{!-- Logo Header , not displaying yet--}}
+<div class="uk-container uk-container-small">
+  <div class="centered">
+  <div class="uk-background-container" id="logo">
+    <img src="images/berm_logo.png">
+  </div>
+  {{!-- explain purpose of website --}}
+  <h1>Women's Mountain Bike Exchange</h1>
+  
+  <br>
+  
+  {{!-- button to display modal and post new item --}}
+  <!-- Modal -->
+<!-- Button toggling Modal -->
+<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Post Your Gear</button>
+
+
+<div id="modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Post Your Gear</h2>
+        <p>Maybe put text here?</p>
+
+<!-- Form section -->
+<form>
+    <fieldset class="uk-fieldset">
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="Item Description">
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="Price">
+        </div>
+
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+            <label><input class="uk-radio" type="radio" name="radio2" checked> Bikes</label>
+            <label><input class="uk-radio" type="radio" name="radio2"> Apparel</label>
+            <label><input class="uk-radio" type="radio" name="radio3"> Parts</label>
+            <label><input class="uk-radio" type="radio" name="radio4"> Accessories</label>
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="Seller Email">
+        </div>
+
+    </fieldset>
+</form>
+
+<!-- Cancel or Post buttons -->
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary" type="button">Post</button>
+        </p>
+    </div>
 </div>
+   
+</div>
+</div>
+
+
+{{!-- list all gear available currently --}}
+
+{{!-- one main card to for each gear listing to append inside, as it's own card --}}
+<div class="uk-container">
+  <div class="uk-card uk-card-body">
+    <ul id="view-all">
+      {{#each Listings}}
+      <div class="uk-card">
+        <li data-id="{{this.id}}">
+        </li>
+      </div>
+      {{/each}}
+    </ul>
+  </div>
+
+</div>
+
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
+      
+      
+      
+      
+      {{!-- <form class="clearfix mb-4" action="POST">
+        <div class="form-group">
+          <label for="example-text">Example Text</label>
+          <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+        </div>
+        <div class="form-group">
+          <label for="example-description">Example Description</label>
+          <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+        </div>
+        <button id="submit" class="btn btn-primary float-right">Submit</button>
+      </form> --}}
