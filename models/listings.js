@@ -28,11 +28,6 @@ module.exports = function (sequelize, DataTypes) {
     sold: {
       type: DataTypes.BOOLEAN,
       allowNull: false
-    },
-    created_at: {
-      type: "TIMESTAMP",
-      defaultValue: sequelize.literal("CURRENT_TIMESTAMP"),
-      allowNull: false
     }
   });
   return Listings;
