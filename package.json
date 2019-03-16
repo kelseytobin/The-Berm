@@ -15,9 +15,7 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "mysql2": "^1.6.5",
-    "sequelize": "^4.43.0",
-    "sequelize-msnodesqlv8": "^0.2.6-beta.8",
-    "tedious": "^5.0.3"
+    "sequelize": "^4.43.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
