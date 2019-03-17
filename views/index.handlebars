@@ -1,7 +1,15 @@
 {{!-- Navigation Bar --}}
 
-<nav class="uk-navbar-container uk-navbar">
-  <div class="uk-navbar-right">
+<nav class="uk-navbar-container uk-navbar-transparent uk-navbar">
+  <div class="uk-navbar-right" id="navBar">
+
+    {{!-- Logo Header--}}
+    <div class="uk-container uk-container-small">
+      {{!-- <div class="centered"> --}}
+      <div class="uk-background-container" id="logo">
+        <img src="images/berm_logo_description.png">
+      </div>
+    </div>
 
     <ul class="uk-navbar-nav">
       <li class="uk-active"><a href="#">Home</a></li>
@@ -15,64 +23,78 @@
 
   </div>
 </nav>
+<br>
+
+{{!-- Full width Image --}}
+<img src="images/mtnbikeblackwhitelandscape2.png" width="100%" alt="mountain-biking" uk-img>
 
 
-{{!-- Logo Header , not displaying yet--}}
-<div class="uk-container uk-container-small">
-  <div class="centered">
-  <div class="uk-background-container" id="logo">
-    <img src="images/berm_logo_description.png">
+{{!-- explain purpose of website --}}
+{{!-- <h1>Women's Mountain Bike Exchange</h1> --}}
+
+<br>
+
+{{!-- Buttons to gear for sale --}}
+<div class="uk-container uk-container-large uk-align-center">
+  <h2>Current Items For Sale</h2>
+  <div class="uk-child-width-1-5 uk-align-center" uk-grid>
+    <a class="uk-button uk-button-secondary uk-button-small" href="">Bikes</a>
+    <a class="uk-button uk-button-secondary uk-button-small" href="">Bike Accessories</a>
+    <a class="uk-button uk-button-secondary uk-button-small" href="">Apparel</a>
+    <a class="uk-button uk-button-secondary uk-button-small" href="">All Items</a>
   </div>
-  {{!-- explain purpose of website --}}
-  <h1>Women's Mountain Bike Exchange</h1>
-  
-  <br>
-  
-  {{!-- button to display modal and post new item --}}
-  <!-- Modal -->
+</div>
+<hr class="uk-divider-icon">
+{{!-- button to display modal and post new item --}}
+<!-- Modal -->
 <!-- Button toggling Modal -->
-<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Post Your Gear</button>
+<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Post
+  Your Gear</button>
+
+  <br>
+  <br>
+  <br>
 
 
 <div id="modal" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body">
-        <h2 class="uk-modal-title">Post Your Gear</h2>
-        <p>Maybe put text here?</p>
+  <div class="uk-modal-dialog uk-modal-body">
+    <h2 class="uk-modal-title">Post Your Gear</h2>
+    <p>Maybe put text here?</p>
 
-<!-- Form section -->
-<form>
-    <fieldset class="uk-fieldset">
+    <!-- Form section -->
+    <form>
+      <fieldset class="uk-fieldset">
 
         <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="Item Description">
+          <input class="uk-input" type="text" placeholder="Item Description">
         </div>
 
         <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="Price">
+          <input class="uk-input" type="text" placeholder="Price">
         </div>
 
         <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-            <label><input class="uk-radio" type="radio" name="radio2" checked> Bikes</label>
-            <label><input class="uk-radio" type="radio" name="radio2"> Apparel</label>
-            <label><input class="uk-radio" type="radio" name="radio3"> Parts</label>
-            <label><input class="uk-radio" type="radio" name="radio4"> Accessories</label>
+          <label><input class="uk-radio" type="radio" name="radio2" checked> Bikes</label>
+          <label><input class="uk-radio" type="radio" name="radio2"> Apparel</label>
+          <label><input class="uk-radio" type="radio" name="radio3"> Parts</label>
+          <label><input class="uk-radio" type="radio" name="radio4"> Accessories</label>
         </div>
 
         <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="Seller Email">
+          <input class="uk-input" type="text" placeholder="Seller Email">
         </div>
 
-    </fieldset>
-</form>
+      </fieldset>
+    </form>
 
-<!-- Cancel or Post buttons -->
-        <p class="uk-text-right">
-            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-            <button class="uk-button uk-button-primary" type="button">Post</button>
-        </p>
-    </div>
+    <!-- Cancel or Post buttons -->
+    <p class="uk-text-right">
+      <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+      <button class="uk-button uk-button-primary" type="button">Post</button>
+    </p>
+  </div>
 </div>
-   
+
 </div>
 </div>
 
@@ -98,11 +120,11 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
-      
-      
-      
-      
-      {{!-- <form class="clearfix mb-4" action="POST">
+
+
+
+
+{{!-- <form class="clearfix mb-4" action="POST">
         <div class="form-group">
           <label for="example-text">Example Text</label>
           <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
