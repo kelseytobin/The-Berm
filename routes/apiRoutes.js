@@ -5,6 +5,13 @@
 var db = require("../models");
 
 module.exports = function (app) {
+  // Get all listings- working
+  app.get("/api/listings", function(req, res) {
+    db.Listings.findAll({}).then(function(dbListings) {
+      res.json(dbListings);
+    });
+  });
+  
   // get all bikes - working
   app.get("/api/:bikes", function (req, res) {
     db.Listings.findAll({
@@ -41,12 +48,6 @@ module.exports = function (app) {
       });
   });
 
-  // Get all listings- not working
-  app.get("/api/listings", function(req, res) {
-    db.Listings.findAll({}).then(function(dbListings) {
-      return res.json(dbListings);
-    });
-  });
 
 
   //create new listing - think we will need to reformat this to modal
