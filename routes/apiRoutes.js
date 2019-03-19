@@ -1,7 +1,4 @@
-// Dependencies
-// =============================================================
-
-// Requiring our Todo model
+// Requiring our model
 var db = require("../models");
 
 module.exports = function (app) {
