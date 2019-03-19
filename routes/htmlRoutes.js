@@ -14,29 +14,22 @@ module.exports = function(app) {
 
   //route loads display bikes page
   app.get("/bikes", function(req, res) {
-
     res.render(path.join(__dirname, "../views/bikes.handlebars"));
-
   });
 
   //route loads display accessories page
   app.get("/accessories", function(req, res) {
-
     res.render(path.join(__dirname, "../views/accessories.handlebars"));
-
   });
 
   //route loads display apparrel page
   app.get("/apparel", function(req, res) {
-
     res.render(path.join(__dirname, "../views/apparel.handlebars"));
   });
 
   // route loads display view all page
   app.get("/all", function(req, res) {
-
     res.render(path.join(__dirname, "../views/all.handlebars"));
-
   });
 
   // Render 404 page for any unmatched routes
@@ -44,8 +37,3 @@ module.exports = function(app) {
     res.render("404");
   });
 };
-
-
-
-
-

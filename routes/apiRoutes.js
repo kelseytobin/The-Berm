@@ -1,51 +1,59 @@
 // Requiring our model
 var db = require("../models");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Get all listings- working
   app.get("/api/listings", function(req, res) {
     db.Listings.findAll({}).then(function(dbListings) {
       res.json(dbListings);
     });
   });
-  
+
   // get all bikes - working
-  app.get("/api/bikes", function (req, res) {
+  app.get("/api/bikes", function(req, res) {
     db.Listings.findAll({
-        where: {
-          item_category: "bikes"
-        }
-      })
-      .then(function (dbListings) {
-        res.render(dbListings);
-      });
-  });
-
-  // get all apparel - working
-  app.get("/api/:apparel", function (req, res) {
-    db.Listings.findAll({
-        where: {
-          item_category: req.params.apparel
-        }
-      })
-      .then(function (dbListings) {
-        res.json(dbListings);
-      });
-  });
-
-  // get all accessories - working
-  app.get("/api/:accessories", function (req, res) {
-    db.Listings.findAll({
-        where: {
-          item_category: req.params.accessories
+      where: {
+        item_category: "bikes"
       }
     })
       .then(function (dbListings) {
-        res.json(dbListings);
-      });
+      res.render(dbListings);
+    });
   });
 
+  // get all apparel - working
+  app.get("/api/apparel", function(req, res) {
+    db.Listings.findAll({
+      where: {
+        item_category: "apparel"
+      }
+    })
+      .then(function (dbListings) {
+      res.json(dbListings);
+    });
+  });
 
+  // get all accessories - working
+  app.get("/api/accessories", function(req, res) {
+    db.Listings.findAll({
+      where: {
+        item_category: "accessories"
+      }
+    }).then(function(dbListings) {
+      res.json(dbListings);
+    });
+  });
+
+  // get all parts - working
+  app.get("/api/parts", function(req, res) {
+    db.Listings.findAll({
+      where: {
+        item_category: "parts"
+      }
+    }).then(function(dbListings) {
+      res.json(dbListings);
+    });
+  });
 
   //create new listing - think we will need to reformat this to modal
   // app.post("/api/listings", function(req, res) {
