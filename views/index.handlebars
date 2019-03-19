@@ -66,51 +66,76 @@
   </div>
 </div> --}}
 
-{{!-- button to display modal and post new item --}}
-<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modalSelector" id="modalbutton">Post
-  Your Gear</button>
+{{!-- Post Your Gear Button to Modal with Form --}}
+<div class="container">
 
-<div id="modal" uk-modal>
-  <div class="uk-modal-dialog uk-modal-body">
-    <h2 class="uk-modal-title">Post Your Gear</h2>
-    <p>Maybe put text here?</p>
+        {{!-- button to display modal and post new item --}}
+        <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modalSelector"
+            id="modalBtn">Post Your Gear</button>
 
-    <!-- Form section -->
-    <form>
-      <fieldset class="uk-fieldset">
 
-        <div class="uk-margin">
-          <input class="uk-input" type="text" placeholder="Item Description">
+        <div id="modalSelector" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Post Your Gear</h2>
+
+                {{!-- Form section --}}
+                <form id="postForm" method="POST">
+                    <fieldset class="uk-fieldset">
+
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder=" Item Description">
+                        </div>
+
+                        <div class="uk-margin">
+                            <input class="uk-input uk-form-width-small" type="text" placeholder=" Price ($)">
+                        </div>
+
+                        <div class="uk-margin">
+                            <div class="uk-form-file"><input type="file"></div>
+                        </div>
+
+                        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                            <label><input class="uk-radio" type="radio" name="radio4" checked> Bikes</label>
+                            <label><input class="uk-radio" type="radio" name="radio4"> Apparel</label>
+                            <label><input class="uk-radio" type="radio" name="radio4"> Parts</label>
+                            <label><input class="uk-radio" type="radio" name="radio4"> Accessories</label>
+                        </div>
+
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder=" Email Address">
+                        </div>
+
+                    </fieldset>
+                </form>
+
+                {{!-- Cancel or Post buttons --}}
+                <p class="uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                    <button id="postBtn" class="uk-button uk-button-primary uk-modal-close" type="button">Post</button>
+                </p>
+            </div>
         </div>
+    </div>
 
-        <div class="uk-margin">
-          <input class="uk-input" type="text" placeholder="Price">
-        </div>
+{{!-- Below needs to be put in index.js once we get it linked --}}
+{{!-- UIkit JS --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+        $("#modalBtn").on("click", function (event) {
+            event.preventDefault();
+            var modal = UIkit.modal("#modalSelector");
+            modal.show();
+        });
 
-        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-          <label><input class="uk-radio" type="radio" name="radio2" checked> Bikes</label>
-          <label><input class="uk-radio" type="radio" name="radio2"> Apparel</label>
-          <label><input class="uk-radio" type="radio" name="radio3"> Parts</label>
-          <label><input class="uk-radio" type="radio" name="radio4"> Accessories</label>
-        </div>
+        $("#postBtn").on("click", function (event) {
+            event.preventDefault();
+            console.log("i posted something");
 
-        <div class="uk-margin">
-          <input class="uk-input" type="text" placeholder="Seller Email">
-        </div>
+        });
+</script>
 
-      </fieldset>
-    </form>
-
-    <!-- Cancel or Post buttons -->
-    <p class="uk-text-right">
-      <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-      <button class="uk-button uk-button-primary" type="button">Post</button>
-    </p>
-  </div>
-</div>
-
-</div>
-</div>
 
 
 {{!-- list all gear available currently --}}
