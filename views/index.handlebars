@@ -6,31 +6,27 @@
     {{!-- Logo Header--}}
     <div class="uk-container uk-container-small">
       {{!-- <div class="centered"> --}}
-      <div class="uk-background-container" id="logo">
-        <img src="images/berm_logo_description.png">
+        <div class="uk-background-container" id="logo">
+          <img src="images/berm_logo_description.png">
+        </div>
       </div>
+
+      <ul class="uk-navbar-nav">
+        <li class="uk-active"><a href="#">Home</a></li>
+
+        <li class="uk-active"><a href="#">Events</a></li>
+
+        <li class="uk-active"><a href="#">Get Educated</a></li>
+
+        <li><a href="#">See The Gear</a></li>
+      </ul>
+
     </div>
-
-    <ul class="uk-navbar-nav">
-      <li class="uk-active"><a href="#">Home</a></li>
-
-      <li class="uk-active"><a href="#">Events</a></li>
-
-      <li class="uk-active"><a href="#">Get Educated</a></li>
-
-      <li><a href="#">See The Gear</a></li>
-    </ul>
-
-  </div>
 </nav>
 <br>
 
 {{!-- Full width Image --}}
 <img src="images/mtnbikeblackwhitelandscape2.png" width="100%" alt="mountain-biking" uk-img>
-
-
-{{!-- explain purpose of website --}}
-{{!-- <h1>Women's Mountain Bike Exchange</h1> --}}
 
 <br>
 
@@ -39,46 +35,40 @@
   <h2>CURRENT ITEMS FOR SALE</h2>
   <div id="button-grid uk-align-center" style="text-align:center" uk-grid>
     {{!-- <div class="uk-child-width-expand"> --}}
-    <a class="uk-button uk-button-secondary uk-button-small uk-width-medium" href="">Bikes</a>
-    <a class="uk-button uk-button-secondary uk-button-small uk-width-medium" href="">Bike Accessories</a>
-    <a class="uk-button uk-button-secondary uk-button-small uk-width-medium" href="">Apparel</a>
-    <a class="uk-button uk-button-secondary uk-button-small uk-width-medium" href="">All Items</a>
+      <a class="uk-button uk-button-secondary uk-button-small uk-width-medium" href="">Bikes</a>
+      <a class="uk-button uk-button-secondary uk-button-small uk-width-medium" href="">Bike Accessories</a>
+      <a class="uk-button uk-button-secondary uk-button-small uk-width-medium" href="">Apparel</a>
+      <a class="uk-button uk-button-secondary uk-button-small uk-width-medium" href="">All Items</a>
     </div>
   </div>
 </div>
 </div>
-{{!-- <hr class="uk-divider-icon"> --}}
+{{!--
+<hr class="uk-divider-icon"> --}}
 <hr>'
 
 {{!-- trying to understand why the buttons wont work --}}
 {{!-- <div class="uk-container uk-container-large uk-align-center">
   <div style="text-align: center" class="row" id="buttons">
 
-<button>
-  Bikes
-</button>
-<button>
-  Bike Accessories
-</button>
-<button>
-  Apparel
-</button>
-<button>
-  All Items
-</button>
+    <button>
+      Bikes
+    </button>
+    <button>
+      Bike Accessories
+    </button>
+    <button>
+      Apparel
+    </button>
+    <button>
+      All Items
+    </button>
   </div>
 </div> --}}
 
 {{!-- button to display modal and post new item --}}
-<!-- Modal -->
-<!-- Button toggling Modal -->
-<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Post
+<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modalSelector" id="modalbutton">Post
   Your Gear</button>
-
-  <br>
-  <br>
-  <br>
-
 
 <div id="modal" uk-modal>
   <div class="uk-modal-dialog uk-modal-body">
@@ -141,21 +131,14 @@
 </div>
 
 
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
-
-
-
-
 {{!-- <form class="clearfix mb-4" action="POST">
-        <div class="form-group">
-          <label for="example-text">Example Text</label>
-          <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-        </div>
-        <div class="form-group">
-          <label for="example-description">Example Description</label>
-          <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-        </div>
-        <button id="submit" class="btn btn-primary float-right">Submit</button>
-      </form> --}}
+  <div class="form-group">
+    <label for="example-text">Example Text</label>
+    <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+  </div>
+  <div class="form-group">
+    <label for="example-description">Example Description</label>
+    <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+  </div>
+  <button id="submit" class="btn btn-primary float-right">Submit</button>
+</form> --}}

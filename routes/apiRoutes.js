@@ -10,14 +10,14 @@ module.exports = function (app) {
   });
   
   // get all bikes - working
-  app.get("/api/:bikes", function (req, res) {
+  app.get("/api/bikes", function (req, res) {
     db.Listings.findAll({
         where: {
-          item_category: req.params.bikes
+          item_category: "bikes"
         }
       })
       .then(function (dbListings) {
-        res.json(dbListings);
+        res.render(dbListings);
       });
   });
 
