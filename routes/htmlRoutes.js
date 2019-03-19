@@ -23,22 +23,22 @@ module.exports = function(app) {
 
   //route loads display bike page
   app.get("/bikes", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/layouts/bikes.handlebars"));
+    res.sendFile(path.join(__dirname, "../views/bikes.handlebars"));
   });
 
   // route loads display accessories page
-  app.get("/blog", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/layouts/accessories.handlebars"));
+  app.get("/accessories", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/accessories.handlebars"));
   });
 
   // route loads display apparrel page
-  app.get("/blog", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/layouts/apparel.handlebars"));
+  app.get("/apparel", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/apparel.handlebars"));
   });
 
   // route loads display view all page
-  app.get("/blog", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/layouts/all.handlebars"));
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/all.handlebars"));
   });
 
   // Render 404 page for any unmatched routes

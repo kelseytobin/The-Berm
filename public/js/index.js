@@ -1,3 +1,33 @@
+$("#modalbutton").on("click", function(event) {
+    event.preventDefault();
+    var modal = UIkit.modal("#modalSelector");
+    if ( modal.isActive() ) {
+    modal.hide();
+    } else {
+    modal.show();
+  }
+}); 
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
