@@ -2,6 +2,15 @@
   line-height: 2.5;
 }
 
+a {
+  color: #8000ff;
+}
+
+#item-container {
+  border: 3px solid #8000ff;
+  padding: 40px;
+}
+
 h2 {
   color: black;;
   font-weight: 700;
@@ -11,7 +20,6 @@ h2 {
 .uk-button:not(:disabled) {
   align-content: center;
   margin-bottom: 10px;
-  background: #8000ff;
   font-family: 'Noto Sans TC', sans-serif;
   border-radius: 25px;
 }
