@@ -36,8 +36,7 @@ module.exports = function(app) {
   app.get("/api/accessories", function(req, res) {
     db.Listings.findAll({
       where: {
-        item_category: "accessories",
-        item_category: "parts"
+        item_category: "accessories"
       }
     }).then(function(dbListings) {
       res.json(dbListings);
