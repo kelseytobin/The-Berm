@@ -15,10 +15,9 @@ module.exports = function(app) {
       where: {
         item_category: "bikes"
       }
-    })
-      .then(function (dbListings) {
-      res.render(dbListings);
-    });
+    }).then(function(dbListings) {
+        res.json(dbListings);
+      });
   });
 
   // get all apparel - working
@@ -27,10 +26,9 @@ module.exports = function(app) {
       where: {
         item_category: "apparel"
       }
-    })
-      .then(function (dbListings) {
-      res.json(dbListings);
-    });
+    }).then(function(dbListings) {
+        res.json(dbListings);
+      });
   });
 
   // get all accessories - working
@@ -55,20 +53,21 @@ module.exports = function(app) {
     });
   });
 
-  //create new listing - think we will need to reformat this to modal
-  // app.post("/api/listings", function(req, res) {
-  //   console.log(req.body);
-  //   db.Listings.create({
-  //     item_name: req.body.item_name,
-  //     item_price: req.body.item_price,
-  //     item_category: req.body.item_category,
-  //     seller_email: req.body.seller_email,
-  //     createdAt: req.body.createdAt,
-  //     sold: req.body.sold
-  //   }).then(function(dbListings) {
-  //     res.json(dbListings);
-  //   });
-  // });
+  app.post("/api/newListings", function(req, res) {
+    var newListings = req.body;
+
+    db.Listings.create({
+      item_name: newListings.itemName,
+      item_price: newListings.itemPrice,
+      item_category: newListings.itemCategory,
+      seller_email: newListings.sellerEmail
+    }).then(function(dbListings) {
+      res.json(dbListings);
+
+      console.log(newListings);
+      console.log(db.Listings);
+    });
+  });
 
   // // Delete a listing by id - need to associate this with a button?
   // app.delete("/api/listings/:id", function(req, res) {

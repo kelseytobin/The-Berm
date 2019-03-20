@@ -42,18 +42,15 @@ $(document).ready(function() {
       sellerEmail: sellerEmailInput.val().trim()
     };
     console.log(newPost);
-
-    // submitPost(newPost);
-  });
-
-// function submitPost
-
-//button clicks linking to apiroute for data htmlroute for display
-  $("#bikeBtn").on("click", function() {
-    $.get("/api/bikes", function(data) {
-      console.log(data);
+    $.post("/api/newListings", newPost).then(function() {
+      alert("We added your sale item.... ");
     });
-    console.log("button was clicked!");
+
+    //empty input boxes from modal form
+    $("#itemName").val("");
+    $("#itemPrice").val("");
+    $("#itemImage").val("");
+    $("#sellerEmail").val("");
   });
 });
 
