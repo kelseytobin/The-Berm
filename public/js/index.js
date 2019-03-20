@@ -46,12 +46,17 @@ $(document).ready(function() {
     };
     console.log(newPost);
 
-    // submitPost(newPost);
+    $.post("/api/newListings", newPost).then(function() {
+      alert("We added your sale item.... ");
+    });
+
+    //empty input boxes from modal form
+    $("#itemName").val("");
+    $("#itemPrice").val("");
+    $("#itemImage").val("");
+    $("#sellerEmail").val("");
   });
 
-// function submitPost
-
-//end document.ready
 });
 
 
