@@ -17,7 +17,7 @@ module.exports = function(app) {
       }
     })
       .then(function (dbListings) {
-      res.render(dbListings);
+      res.json(dbListings);
     });
   });
 

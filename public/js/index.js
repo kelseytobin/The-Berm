@@ -6,6 +6,9 @@ $(document).ready(function() {
   var itemCategorySelect = $("#itemCategory");
   var sellerEmailInput = $("#sellerEmail");
 
+  //jquery reference to append listings to hbs card body
+  var listingCard = $(".listingBody");
+
   // Giving the itemCategorySelect a default value
   //not working - showing as null
   itemCategorySelect.val("bikes");
@@ -48,14 +51,9 @@ $(document).ready(function() {
 
 // function submitPost
 
-//button clicks linking to apiroute for data htmlroute for display
-  $("#bikeBtn").on("click", function() {
-    $.get("/api/bikes", function(data) {
-      console.log(data);
-    });
-    console.log("button was clicked!");
-  });
+//end document.ready
 });
+
 
 //Starter code example:
 
