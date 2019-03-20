@@ -1,6 +1,6 @@
-{{!-- Navigation Bar --}}
+{{!-- Navigation Bar
 
-<nav class={{navBar}}"uk-navbar-container uk-navbar-transparent uk-navbar">
+<nav class="uk-navbar-container uk-navbar-transparent uk-navbar">
   <div class="uk-navbar-right" id="navBar">
 
     {{!-- Logo Header--}}
@@ -35,93 +35,88 @@
   <h2>CURRENT ITEMS FOR SALE</h2>
   <div id="button-grid uk-align-center" style="text-align:center" uk-grid>
     {{!-- <div class="uk-child-width-expand"> --}}
-      <button class="uk-button uk-button-default uk-margin-small-right" type="button" id="bikeBtn">Bikes</button>
-      <button class="uk-button uk-button-default uk-margin-small-right" type="button" id="accessoriesBtn">Accessories</button>
-      <button class="uk-button uk-button-default uk-margin-small-right" type="button" id="apparelBtn">Apparel</button>
-      <button class="uk-button uk-button-default uk-margin-small-right" type="button" id="partsBtn">Parts</button>
-      <button class="uk-button uk-button-default uk-margin-small-right" type="button" id="allBtn">All Items</button>
-      
-      {{!-- <a class="uk-button uk-button-secondary uk-button-small uk-width-medium" href="">Bikes</a>
-      <a class="uk-button uk-button-secondary uk-button-small uk-width-medium" href="">Bike Accessories</a>
-      <a class="uk-button uk-button-secondary uk-button-small uk-width-medium" href="">Apparel</a>
-      <a class="uk-button uk-button-secondary uk-button-small uk-width-medium" href="">All Items</a> --}}
+      <button class="uk-button uk-button-default uk-margin-small-right" type="button" id="bikeBtn"><a href="/bikes">Bikes</a></button>
+      <button class="uk-button uk-button-default uk-margin-small-right" type="button" id="accessoriesBtn"><a href="/accessories">Accessories</a></button>
+      <button class="uk-button uk-button-default uk-margin-small-right" type="button" id="apparelBtn"><a href="/apparel">Apparel</a></button>
+      <button class="uk-button uk-button-default uk-margin-small-right" type="button" id="partsBtn"><a href="/parts">Parts</a></button>
+      <button class="uk-button uk-button-default uk-margin-small-right" type="button" id="allBtn"><a href="/all">All
+          Items</a></button>
     </div>
   </div>
 </div>
 </div>
-{{!--
-<hr class="uk-divider-icon"> --}}
+
 <hr>'
 
 
 {{!-- Post Your Gear Button to Modal with Form --}}
 <div class="container">
 
-        {{!-- button to display modal and post new item --}}
-        <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modalSelector"
-            id="modalBtn">Post Your Gear</button>
+  {{!-- button to display modal and post new item --}}
+  <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modalSelector" id="modalBtn">Post
+    Your Gear</button>
 
 
-        <div id="modalSelector" uk-modal>
-            <div class="uk-modal-dialog uk-modal-body">
-                <h2 class="uk-modal-title">Post Your Gear</h2>
+  <div id="modalSelector" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+      <h2 class="uk-modal-title">Post Your Gear</h2>
 
-                {{!-- Form section --}}
-                <form id="postForm" method="POST">
-                    <fieldset class="uk-fieldset">
+      {{!-- Form section --}}
+      <form id="postForm" method="POST">
+        <fieldset class="uk-fieldset">
 
-                        <div class="uk-margin">
-                            <input class="uk-input" type="text" placeholder=" Item Description" id="itemName">
-                        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder=" Item Description" id="itemName">
+          </div>
 
-                        <div class="uk-margin">
-                            <input class="uk-input uk-form-width-small" type="text" placeholder=" Price ($)" id="itemPrice">
-                        </div>
+          <div class="uk-margin">
+            <input class="uk-input uk-form-width-small" type="text" placeholder=" Price ($)" id="itemPrice">
+          </div>
 
-                        <div class="uk-margin">
-                            <div class="uk-form-file"><input type="file" id="itemImage"></div>
-                        </div>
+          <div class="uk-margin">
+            <div class="uk-form-file"><input type="file" id="itemImage"></div>
+          </div>
 
-                        <!-- <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+          <!-- <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
                             <label><input class="uk-radio" type="radio" name="radio4" checked value="bikes"> Bikes</label>
                             <label><input class="uk-radio" type="radio" name="radio4" value="apparel"> Apparel</label>
                             <label><input class="uk-radio" type="radio" name="radio4" value="parts"> Parts</label>
                             <label><input class="uk-radio" type="radio" name="radio4" value="accessories"> Accessories</label>
                         </div> -->
 
-                        <div class="form-group">
-                                <label for="itemCategory">Select Category: </label>
-                                <select class="custom-select" id="itemCategory">
-                                  <option value="bikes">Bikes</option>
-                                  <option value="apparel">Apparel</option>
-                                  <option value="parts">Parts</option>
-                                  <option value="accessories">Accessories</option>
-                                </select>
-                              </div>
+          <div class="form-group">
+            <label for="itemCategory">Select Category: </label>
+            <select class="custom-select" id="itemCategory">
+              <option value="bikes">Bikes</option>
+              <option value="apparel">Apparel</option>
+              <option value="parts">Parts</option>
+              <option value="accessories">Accessories</option>
+            </select>
+          </div>
 
 
-                        <div class="uk-margin">
-                            <input class="uk-input" type="text" placeholder=" Email Address" id="sellerEmail">
-                        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder=" Email Address" id="sellerEmail">
+          </div>
 
-                    </fieldset>
-                </form>
+        </fieldset>
+      </form>
 
-                {{!-- Cancel or Post buttons --}}
-                <p class="uk-text-right">
-                    <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                    <button id="postBtn" class="uk-button uk-button-primary uk-modal-close" type="button">Post</button>
-                </p>
-            </div>
-        </div>
+      {{!-- Cancel or Post buttons --}}
+      <p class="uk-text-right">
+        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+        <button id="postBtn" class="uk-button uk-button-primary uk-modal-close" type="button">Post</button>
+      </p>
+    </div>
+  </div>
 
-         {{!--Modal for missing info--}}
-        <div id="needInput" uk-modal>
-                <div class="uk-modal-dialog uk-modal-body">
-                    <h2 class="uk-modal-title">! Missing Information !</h2>
-                    <p>Please Fill Out Each Field Before Submitting Your Post</p>
-                    <p class="uk-text-right"></p>
-                    <button class="uk-modal-close-default" type="button" uk-close></button>
-                </div>
-            </div>
-      </div>
+  {{!--Modal for missing info--}}
+  <div id="needInput" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+      <h2 class="uk-modal-title">! Missing Information !</h2>
+      <p>Please Fill Out Each Field Before Submitting Your Post</p>
+      <p class="uk-text-right"></p>
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+    </div>
+  </div>
+</div> --}}

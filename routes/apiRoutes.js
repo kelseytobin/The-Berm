@@ -15,6 +15,7 @@ module.exports = function(app) {
       where: {
         item_category: "bikes"
       }
+
     }).then(function(dbListings) {
         res.json(dbListings);
       });

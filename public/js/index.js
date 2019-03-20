@@ -6,6 +6,9 @@ $(document).ready(function() {
   var itemCategorySelect = $("#itemCategory");
   var sellerEmailInput = $("#sellerEmail");
 
+  //jquery reference to append listings to hbs card body
+  var listingCard = $(".listingBody");
+
   // Giving the itemCategorySelect a default value
   //not working - showing as null
   itemCategorySelect.val("bikes");
@@ -42,6 +45,7 @@ $(document).ready(function() {
       sellerEmail: sellerEmailInput.val().trim()
     };
     console.log(newPost);
+
     $.post("/api/newListings", newPost).then(function() {
       alert("We added your sale item.... ");
     });
@@ -52,7 +56,9 @@ $(document).ready(function() {
     $("#itemImage").val("");
     $("#sellerEmail").val("");
   });
+
 });
+
 
 //Starter code example:
 
