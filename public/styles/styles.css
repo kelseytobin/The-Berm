@@ -22,10 +22,7 @@ h2 {
   margin-bottom: 10px;
   font-family: 'Noto Sans TC', sans-serif;
   border-radius: 25px;
-}
-
-#button-grid {
-  align content: center;
+  border: 1px solid #8000ff;
 }
 
 .centered {
@@ -50,8 +47,43 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  
 }
 
 #buttons{
-  align content: center;
+  align-content: center;
+}
+
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+  position: relative;
+}
+
+/* Make the image responsive */
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+#modalBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-140%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: lightgrey;
+  color: #8000ff;
+  font-size: 16px;
+  border: 1px solid #8000ff;
+  cursor: pointer;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+
+.uk-card {
+  padding: 20px;
+  margin: 20px;
 }
