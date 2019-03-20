@@ -17,7 +17,6 @@ $(document).ready(function() {
     event.preventDefault();
     var modal = UIkit.modal("#modalSelector");
     modal.show();
-    //clear form
   });
 
   // Adding an event listener for when the form is submitted
