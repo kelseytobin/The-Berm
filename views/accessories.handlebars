@@ -1,3 +1,4 @@
+
 {{>navbar}}
 <div class="uk-container" id="item-container">
     <div class="uk-card-secondary uk-card-small">
@@ -25,15 +26,16 @@
         $("#listingBody").append(listingBody);
 
         //add listing data to card we just placed on the page
-          // make the name an h2,
+        // make the name an h2,
         $("#listing" + i).append("<h2>" + data[i].item_name + "</h2>");
-          // the price an h3,
-        $("#listing" + i).append("<h3>" + data[i].item_price + "</h3>");
+        // the price an h3,
+        $("#listing" + i).append("<h3>" + "$ " + data[i].item_price + "</h3>");
         // the category an h3,
-        $("#listing" + i).append("<h3>" + data[i].item_category + "</h3>");
-          // and the createdAt an h3.
-          $("#listing" + i).append("<h3>" + data[i].createdAt + "</h3>");
-          console.log(listingBody);
+        $("#listing" + i).append("<h3>" + "Category: " + data[i].item_category + "</h3>");
+        // and the createdAt an h3.
+        $("#listing" + i).append("<h3>" + data[i].createdAt + "</h3>");
+        
+        console.log(listingBody);
       }
       });
 
