@@ -25,6 +25,14 @@ h2 {
   border: 1px solid #8000ff;
 }
 
+.sellerBtn {
+  align-content: center;
+  margin-bottom: 10px;
+  font-family: 'Noto Sans TC', sans-serif;
+  border-radius: 25px;
+  border: 1px solid #8000ff;
+}
+
 .centered {
   position: absolute;
   font-size: 2em;
