@@ -1,41 +1,54 @@
+
 {{>navbar}}
 <div class="uk-container" id="item-container">
-    <div class="uk-card-secondary uk-card-small">
-        <div class="uk-card-body" id="listingBody">
+        <div id="listingBody" class="uk-child-width-expand@s uk-text-center" uk-grid>
         </div>
-    </div>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
+  $(document).ready(function () {
 
-    $(document).ready(function() {
 
-  
     $.get("/api/apparel", function getApparel() {
 
-    }).then(function(data) {
+    }).then(function (data) {
       console.log(data);
 
-        //for each bike that the server sends us back
-        for (var i = 0; i < data.length; i++) {
-          var listingBody = $("<div>");
-        listingBody.addClass("uk-card");
+     //for each bike that the server sends us back
+      for (var i = 0; i < data.length; i++) {
+        var listingBody = $("<div class='uk-card uk-card-hover uk-card-secondary uk-card-body uk-width-1-2@m'>");
+        
+        var sellerBtn = $("<button class='uk-button-primary'>");
+
+        //listingBody.addClass("uk-card")
+
+        sellerBtn.addClass("contactBtn");
+        
+        sellerBtn.text("Conact Seller");
+
         listingBody.attr("id", "listing" + i);
         $("#listingBody").append(listingBody);
 
         //add listing data to card we just placed on the page
-          // make the name an h2,
-        $("#listing" + i).append("<h2>" + data[i].item_name + "</h2>");
-          // the price an h3,
-        $("#listing" + i).append("<h3>" + data[i].item_price + "</h3>");
+        // make the name an h2,
+        $("#listing" + i).append("<h2 class='uk-card-title'> " + data[i].item_name + "</h2>");
+        // the price an h3,
+        $("#listing" + i).append("<p> " + "$ " + data[i].item_price + "</p>");
         // the category an h3,
-        $("#listing" + i).append("<h3>" + data[i].item_category + "</h3>");
-          // and the createdAt an h3.
-          $("#listing" + i).append("<h3>" + data[i].createdAt + "</h3>");
-          console.log(listingBody);
+        $("#listing" + i).append("<p> " + "Category: " + data[i].item_category + "</p>");
+        // and the createdAt an h3.
+        $("#listing" + i).append("<p> " + data[i].createdAt + "</p>");
+        //add button to bottom of listing
+        $("#listing" + i).append(sellerBtn);
+        
+        //append a br to seperate cards being created
+        $("#listing").append("<br>");
+        
+        console.log(listingBody);
+        
       }
-      });
+    });
 
     //test to see button is live
     console.log("button was clicked!");
