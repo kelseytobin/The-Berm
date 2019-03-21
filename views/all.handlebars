@@ -22,18 +22,22 @@
         
         var sellerBtn = $("<button class='uk-button-primary'>");
 
+        var cardImg = $("<img class='uk-border-circle' width='200' height='200' src='images/spokes.jpg'>")
+
         //listingBody.addClass("uk-card")
 
         sellerBtn.addClass("contactBtn");
         
-        sellerBtn.text("Conact Seller");
+        sellerBtn.text("Contact Seller");
 
         listingBody.attr("id", "listing" + i);
         $("#listingBody").append(listingBody);
 
         //add listing data to card we just placed on the page
         // make the name an h2,
-        $("#listing" + i).append("<h2 class='uk-card-title'> " + data[i].item_name + "</h2>");
+        $("#listing" + i).append("<h2 class='uk-card-header'> " + data[i].item_name + "</h2>");
+        //add image circle
+        $("#listing" + i).append(cardImg);
         // the price an h3,
         $("#listing" + i).append("<p> " + "$ " + data[i].item_price + "</p>");
         // the category an h3,

@@ -79,7 +79,7 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-140%, -50%);
+  transform: translate(50%, -80%);
   -ms-transform: translate(-50%, -50%);
   background-color: lightgrey;
   color: #8000ff;
