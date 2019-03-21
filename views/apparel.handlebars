@@ -20,6 +20,8 @@
       //for each bike that the server sends us back
       for (var i = 0; i < data.length; i++) {
         var listingBody = $("<div>");
+        
+        var sellerBtn = $("<button>");
 
         listingBody.addClass("uk-card");
 
@@ -35,7 +37,8 @@
         $("#listing" + i).append("<h3>" + "Category: " + data[i].item_category + "</h3>");
         // and the createdAt an h3.
         $("#listing" + i).append("<h3>" + data[i].createdAt + "</h3>");
-        
+        //add button to bottom of listing
+        $("#listing" + i).append(sellerBtn);
         console.log(listingBody);
         
       }
