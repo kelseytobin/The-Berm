@@ -1,8 +1,14 @@
 
 {{>navbar}}
 <div class="uk-container" id="item-container">
-        <div id="listingBody" class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <div class="uk-background-cover uk-height-medium uk-panel" style="background-image: url(images/background.jpg);">
+      </div>
+
+    <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+        <div id="listingBody">
+          {{!-- append cards with listing data here --}}
         </div>
+    </div>
 </div>
     
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -22,7 +28,7 @@
         
         var sellerBtn = $("<button class='uk-button-primary'>");
 
-        var cardImg = $("<img class='uk-border-circle' width='200' height='200' src='images/spokes.jpg'>")
+        //var cardImg = $("<img class='uk-border-circle' width='200' height='200' src='images/spokes.jpg'>")
 
         //listingBody.addClass("uk-card")
 
@@ -37,7 +43,7 @@
         // make the name an h2,
         $("#listing" + i).append("<h2 class='uk-card-header'> " + data[i].item_name + "</h2>");
         //add image circle
-        $("#listing" + i).append(cardImg);
+        //$("#listing" + i).append(cardImg);
         // the price an h3,
         $("#listing" + i).append("<p> " + "$ " + data[i].item_price + "</p>");
         // the category an h3,
