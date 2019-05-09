@@ -16,9 +16,10 @@ https://fathomless-bastion-60475.herokuapp.com/
 
 ***
 
-## Technologie
+## Technology
 
-* Node.js Express.js
+* Node.js 
+* Express.js
 * MySQL 
 * UI Kit
 * Handlebars
