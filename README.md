@@ -26,12 +26,12 @@ https://fathomless-bastion-60475.herokuapp.com/
 ![Post](images/post.PNG)
 
 ### Built With
-*Node.js 
-*Express.js
-*MySQL 
-*UI Kit
-*Handlebars
-*MVC Design
+* *Node.js 
+* *Express.js
+* *MySQL 
+* *UI Kit
+* *Handlebars
+* *MVC Design
 
 ***
 ### Authors
